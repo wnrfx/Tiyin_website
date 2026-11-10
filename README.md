@@ -1,20 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Tiyin — Локальный финансовый ИИ-ассистент для Узбекистана
 
-# Run and deploy your AI Studio app
+Современный адаптивный лендинг для **Tiyin** — локального (on-device) финансового ИИ-ассистента на смартфоне.
 
-This contains everything you need to run your app locally.
+## Стек технологий
+- **React 19** + **TypeScript**
+- **Tailwind CSS v4** (`@tailwindcss/vite`)
+- **Vite 8**
+- **Lucide React** (иконки)
 
-View your app in AI Studio: https://ai.studio/apps/8c29df0a-17f8-4517-bb8b-33f6cd15846a
+## Локальный запуск
 
-## Run Locally
+```bash
+npm install
+npm run dev
+```
 
-**Prerequisites:**  Node.js
+## Проверка типов, тесты и продакшн-сборка
 
+```bash
+npm run lint
+npm run test
+npm run build
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Деплой на Vercel
+Проект полностью настроен для деплоя на Vercel (`vercel.json`):
+- **Framework Preset**: `Vite`
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
