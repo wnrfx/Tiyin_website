@@ -14,11 +14,13 @@ test('HERO_BRANDS contains supported payment rails Click, Payme, Uzum', () => {
   assert.equal(HERO_BRANDS[2].name, 'Uzum');
 });
 
-test('BACKER_BRANDS contains supported payment rails Click, Payme, Uzum', () => {
-  assert.equal(BACKER_BRANDS.length, 8);
+test('BACKER_BRANDS contains supported payment rails Click, Payme, Uzum, Monix, Tez', () => {
+  assert.equal(BACKER_BRANDS.length, 10);
   assert.equal(BACKER_BRANDS[0].name, 'Click');
   assert.equal(BACKER_BRANDS[1].name, 'Payme');
   assert.equal(BACKER_BRANDS[2].name, 'Uzum');
+  assert.equal(BACKER_BRANDS[3].name, 'Monix');
+  assert.equal(BACKER_BRANDS[4].name, 'Tez');
 });
 
 test('duplicateTrack doubles brand lists for seamless marquee looping', () => {
@@ -28,9 +30,9 @@ test('duplicateTrack doubles brand lists for seamless marquee looping', () => {
   assert.equal(doubledHero[7].name, 'Click');
 
   const doubledBackers = duplicateTrack(BACKER_BRANDS);
-  assert.equal(doubledBackers.length, 16);
+  assert.equal(doubledBackers.length, 20);
   assert.equal(doubledBackers[0].name, 'Click');
-  assert.equal(doubledBackers[8].name, 'Click');
+  assert.equal(doubledBackers[10].name, 'Click');
 });
 
 test('calculateHaloYield computes savings goal projections accurately', () => {

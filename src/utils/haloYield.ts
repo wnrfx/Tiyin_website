@@ -103,25 +103,27 @@ export const BACKER_BRANDS: BrandItem[] = [
     },
   },
   {
-    name: 'Click',
-    style: {
-      fontFamily: 'Georgia, serif',
-      fontWeight: 600,
-      letterSpacing: '-0.02em',
-      fontSize: '17px',
-    },
-  },
-  {
-    name: 'Payme',
+    name: 'Monix',
     style: {
       fontFamily: 'Helvetica, Arial, sans-serif',
       fontWeight: 700,
       letterSpacing: '-0.01em',
       fontSize: '15px',
+      color: '#000000',
     },
   },
   {
-    name: 'Uzum',
+    name: 'Tez',
+    style: {
+      fontFamily: 'Georgia, serif',
+      fontWeight: 700,
+      letterSpacing: '-0.02em',
+      fontSize: '17px',
+      color: '#000000',
+    },
+  },
+  {
+    name: 'Click',
     style: {
       fontFamily: 'Verdana, sans-serif',
       fontWeight: 700,
@@ -131,7 +133,7 @@ export const BACKER_BRANDS: BrandItem[] = [
     },
   },
   {
-    name: 'Click',
+    name: 'Payme',
     style: {
       fontFamily: "'Courier New', monospace",
       fontWeight: 700,
@@ -140,12 +142,32 @@ export const BACKER_BRANDS: BrandItem[] = [
     },
   },
   {
-    name: 'Payme · Uzum',
+    name: 'Uzum',
     style: {
       fontFamily: 'Palatino, serif',
       fontWeight: 500,
       letterSpacing: '0.03em',
       fontSize: '15px',
+    },
+  },
+  {
+    name: 'Monix',
+    style: {
+      fontFamily: 'Helvetica, Arial, sans-serif',
+      fontWeight: 700,
+      letterSpacing: '-0.01em',
+      fontSize: '15px',
+      color: '#000000',
+    },
+  },
+  {
+    name: 'Tez',
+    style: {
+      fontFamily: 'Georgia, serif',
+      fontWeight: 700,
+      letterSpacing: '-0.02em',
+      fontSize: '17px',
+      color: '#000000',
     },
   },
 ];

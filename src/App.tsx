@@ -28,8 +28,8 @@ export default function App() {
   };
 
   return (
-    <div id="top" className="flex flex-col bg-[#F5F5F5]">
-      <div className="relative h-screen flex flex-col overflow-hidden">
+    <div id="top" className="flex flex-col bg-[#F5F5F5] overflow-x-hidden">
+      <div className="relative min-h-[100svh] md:h-screen flex flex-col overflow-hidden">
         <Navbar
           onOpenWallet={() => openModalWithTab('wallet')}
           onNavigate={handleNavigate}

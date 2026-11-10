@@ -80,7 +80,7 @@ export function InteractiveModal({
               >
                 Email Address for Early Access
               </label>
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   id="early-access-email"
                   type="email"
@@ -91,7 +91,7 @@ export function InteractiveModal({
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 bg-black text-white text-base font-medium px-6 py-2.5 rounded-full hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap shrink-0 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 bg-black text-white text-base font-medium px-6 py-2.5 rounded-full hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   <span>Join Waitlist</span>
                   <ArrowRight className="w-4 h-4" />
