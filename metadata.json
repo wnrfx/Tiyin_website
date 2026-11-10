@@ -1,6 +1,5 @@
 {
-  "name": "Tiyin — Финансовый ИИ-ассистент для Узбекистана",
-  "description": "Локальный финансовый ИИ-ассистент на вашем смартфоне: голосовые переводы, автооплата счетов и полная приватность данных без облачных серверов.",
-  "requestFramePermissions": [],
-  "majorCapabilities": []
+  "name": "Tiyin — On-Device AI Financial Assistant",
+  "description": "A local, on-device AI financial assistant built for residents across Uzbekistan to manage everyday payments, recurring bills, and money transfers privately and effortlessly.",
+  "requestFramePermissions": []
 }

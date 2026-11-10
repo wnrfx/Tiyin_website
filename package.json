@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test src/utils/tiyinData.test.ts"
+    "test": "node --experimental-strip-types --test src/utils/haloYield.test.ts"
   },
   "dependencies": {
     "lucide-react": "^0.546.0",

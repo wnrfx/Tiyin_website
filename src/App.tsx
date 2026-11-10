@@ -6,70 +6,48 @@
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
-import { ProblemSection } from './components/ProblemSection';
-import { SolutionSection } from './components/SolutionSection';
-import { FeaturesSection } from './components/FeaturesSection';
-import { HowItWorksSection } from './components/HowItWorksSection';
-import { PrivacySection } from './components/PrivacySection';
-import { PaymentRailsSection } from './components/PaymentRailsSection';
-import { EarlyAccessSection } from './components/EarlyAccessSection';
-import { Footer } from './components/Footer';
-import { ActionModal, type ModalMode } from './components/ActionModal';
+import { InfoSection } from './components/InfoSection';
+import { BackedBySection } from './components/BackedBySection';
+import { UseCasesSection } from './components/UseCasesSection';
+import { InteractiveModal, type ModalTab } from './components/InteractiveModal';
 
 export default function App() {
-  const [modalMode, setModalMode] = useState<ModalMode>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalTab, setModalTab] = useState<ModalTab>('wallet');
 
-  const scrollToWaitlist = () => {
-    const el = document.getElementById('early-access');
+  const openModalWithTab = (tab: ModalTab) => {
+    setModalTab(tab);
+    setModalOpen(true);
+  };
+
+  const handleNavigate = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
-      const input = document.getElementById('waitlist-contact');
-      if (input instanceof HTMLElement) {
-        setTimeout(() => input.focus(), 450);
-      }
     }
   };
 
   return (
-    <div id="top" className="min-h-screen flex flex-col bg-[#FAF8F5] text-stone-950">
-      <Navbar onWaitlistClick={scrollToWaitlist} />
-
-      <main className="flex-1">
-        {/* 1. Hero section */}
-        <HeroSection
-          onJoinWaitlist={scrollToWaitlist}
-          onOpenVoiceDemo={() => setModalMode('google-play')}
+    <div id="top" className="flex flex-col bg-[#F5F5F5]">
+      <div className="relative h-screen flex flex-col overflow-hidden">
+        <Navbar
+          onOpenWallet={() => openModalWithTab('wallet')}
+          onNavigate={handleNavigate}
         />
+        <HeroSection onJoinUs={() => openModalWithTab('wallet')} />
+      </div>
 
-        {/* 2. Problem section */}
-        <ProblemSection />
+      <InfoSection onDiscoverIt={() => openModalWithTab('calculator')} />
 
-        {/* 3. Solution section */}
-        <SolutionSection />
+      <BackedBySection />
 
-        {/* 4. Features grid (6 cards with icons) */}
-        <FeaturesSection />
+      <UseCasesSection onKnowMore={() => openModalWithTab('commerce')} />
 
-        {/* 5. How it works (4-step horizontal process) */}
-        <HowItWorksSection />
-
-        {/* 6. Privacy & security section */}
-        <PrivacySection />
-
-        {/* 7. Supported payment rails */}
-        <PaymentRailsSection />
-
-        {/* 8. Call-to-action / early access signup */}
-        <EarlyAccessSection />
-      </main>
-
-      {/* 9. Footer */}
-      <Footer />
-
-      <ActionModal
-        mode={modalMode}
-        onClose={() => setModalMode(null)}
-        onGoToWaitlist={scrollToWaitlist}
+      <InteractiveModal
+        key={modalTab}
+        isOpen={modalOpen}
+        initialTab={modalTab}
+        onClose={() => setModalOpen(false)}
       />
     </div>
   );
