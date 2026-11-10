@@ -97,6 +97,15 @@ function TezBlackLogo() {
   );
 }
 
+export function PaymentRailLogo({ name }: { name: string }) {
+  if (name === 'Click') return <ClickBlackLogo />;
+  if (name === 'Payme') return <PaymeBlackLogo />;
+  if (name === 'Uzum') return <UzumBlackLogo />;
+  if (name === 'Monix') return <MonixBlackLogo />;
+  if (name === 'Tez') return <TezBlackLogo />;
+  return <>{name}</>;
+}
+
 export function BackedBySection() {
   const marqueeBackers = duplicateTrack(BACKER_BRANDS);
 
@@ -135,19 +144,7 @@ export function BackedBySection() {
                 className="mx-6 md:mx-10 shrink-0 whitespace-nowrap inline-flex items-center text-black"
                 style={brand.style}
               >
-                {brand.name === 'Click' ? (
-                  <ClickBlackLogo />
-                ) : brand.name === 'Payme' ? (
-                  <PaymeBlackLogo />
-                ) : brand.name === 'Uzum' ? (
-                  <UzumBlackLogo />
-                ) : brand.name === 'Monix' ? (
-                  <MonixBlackLogo />
-                ) : brand.name === 'Tez' ? (
-                  <TezBlackLogo />
-                ) : (
-                  brand.name
-                )}
+                <PaymentRailLogo name={brand.name} />
               </span>
             ))}
           </div>

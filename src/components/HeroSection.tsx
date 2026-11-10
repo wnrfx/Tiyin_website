@@ -1,5 +1,4 @@
 import { ArrowRight } from 'lucide-react';
-import { HERO_BRANDS, duplicateTrack } from '../utils/haloYield';
 
 interface HeroSectionProps {
   onJoinUs: () => void;
@@ -9,26 +8,8 @@ const HERO_VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260423_161253_c72b1869-400f-45ed-ac0c-52f68c2ed5bd.mp4';
 
 export function HeroSection({ onJoinUs }: HeroSectionProps) {
-  const marqueeBrands = duplicateTrack(HERO_BRANDS);
-
   return (
     <div className="flex-1 px-4 pt-16 pb-4 md:px-6 md:pt-20 md:pb-6 flex items-end">
-      <style>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .marquee-track {
-          display: flex;
-          width: max-content;
-          animation: marquee 22s linear infinite;
-        }
-      `}</style>
-
       <div className="max-w-[88rem] mx-auto w-full">
         <div
           className="relative w-full rounded-2xl overflow-hidden bg-[#E5E3EC] min-h-[calc(100svh-80px)] md:h-[calc(100vh-96px)] flex flex-col"
@@ -71,20 +52,6 @@ export function HeroSection({ onJoinUs }: HeroSectionProps) {
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-black" />
               </span>
             </button>
-
-            <div className="mt-12 md:mt-24 w-full max-w-full md:max-w-md overflow-hidden" aria-label="Supported Payment Rails">
-              <div className="marquee-track items-center">
-                {marqueeBrands.map((brand, idx) => (
-                  <span
-                    key={`${brand.name}-${idx}`}
-                    className="mx-5 md:mx-7 shrink-0 text-black/60 whitespace-nowrap"
-                    style={brand.style}
-                  >
-                    {brand.name}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

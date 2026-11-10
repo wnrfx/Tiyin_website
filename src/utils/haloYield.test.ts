@@ -7,11 +7,13 @@ import {
   duplicateTrack,
 } from './haloYield.ts';
 
-test('HERO_BRANDS contains supported payment rails Click, Payme, Uzum', () => {
-  assert.equal(HERO_BRANDS.length, 7);
+test('HERO_BRANDS contains supported payment rails Click, Payme, Uzum, Monix, Tez', () => {
+  assert.equal(HERO_BRANDS.length, 10);
   assert.equal(HERO_BRANDS[0].name, 'Click');
   assert.equal(HERO_BRANDS[1].name, 'Payme');
   assert.equal(HERO_BRANDS[2].name, 'Uzum');
+  assert.equal(HERO_BRANDS[3].name, 'Monix');
+  assert.equal(HERO_BRANDS[4].name, 'Tez');
 });
 
 test('BACKER_BRANDS contains supported payment rails Click, Payme, Uzum, Monix, Tez', () => {
@@ -25,9 +27,9 @@ test('BACKER_BRANDS contains supported payment rails Click, Payme, Uzum, Monix, 
 
 test('duplicateTrack doubles brand lists for seamless marquee looping', () => {
   const doubledHero = duplicateTrack(HERO_BRANDS);
-  assert.equal(doubledHero.length, 14);
+  assert.equal(doubledHero.length, 20);
   assert.equal(doubledHero[0].name, 'Click');
-  assert.equal(doubledHero[7].name, 'Click');
+  assert.equal(doubledHero[10].name, 'Click');
 
   const doubledBackers = duplicateTrack(BACKER_BRANDS);
   assert.equal(doubledBackers.length, 20);
